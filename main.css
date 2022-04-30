@@ -1,0 +1,135 @@
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  max-width: 90%;
+  margin: 30px auto;
+  padding-right: 1%;
+  pointer-events: none;
+}
+
+#header .title {
+  display: flex;
+}
+
+#header .title img {
+  max-width: 3em;
+}
+
+#header .title h2 {
+  padding-left: 0.5em;
+}
+
+#header .score {
+  margin: 0;
+  color: #6c90ac;
+}
+
+#header .tried {
+  margin-top: 0;
+}
+
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: 0px auto;
+}
+
+.card {
+  box-sizing: border-box;
+  flex: 7% 1 1;
+  height: 8vw;
+  border: 2px solid #e0e0e0;
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  cursor: pointer;
+}
+
+.card img {
+  max-width: 30%;
+  align-self: center;
+}
+
+.card p {
+  margin: 3px;
+  font-size: 10px;
+}
+
+.card p:last-child {
+  transform: rotate(180deg);
+}
+
+.back {
+  background: url("https://assets-lighthouse.alphacamp.co/uploads/image/file/9222/ExportedContentImage_00.png");
+  background-size: cover;
+}
+
+.paired {
+  background-color: #dae0e3;
+}
+
+.wrong {
+  animation-name: wrongAnimation;
+  animation-duration: 0.2s;
+  animation-iteration-count: 5;
+}
+
+@keyframes wrongAnimation {
+  to {
+    border: 2px solid #ffd54d;
+  }
+}
+
+/** Game finished **/
+.completed {
+  position: absolute;
+  z-index: 999;
+  top: 33vh;
+  background-color: RGBA(232, 246, 254, 0.8);
+  width: 100vw;
+  padding: 50px 0;
+  animation-name: fadeIn;
+  animation-duration: 1.5s;
+}
+
+.completed>p {
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  margin: 0;
+  pointer-events: none;
+}
+
+.completed>p:first-child {
+  font-size: 3em;
+  font-weight: 700;
+  color: #758d9a;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    width: 30vw;
+  }
+}
+
+.hidden {
+  pointer-events: none;
+}
+
+@keyframes dealCardsAnimation {
+  to {
+    bottom: 0px;
+    right: 0px;
+  }
+}
+
+.dealCards {
+  animation-name: dealCardsAnimation;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
