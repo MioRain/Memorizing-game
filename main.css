@@ -133,3 +133,15 @@
   animation-duration: 500ms;
   animation-fill-mode: forwards;
 }
+
+@media screen and (max-width: 660px) {
+  .card {
+    flex: 6.5% 1 1;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .card {
+    flex: 6.1% 1 1;
+  }
+}
